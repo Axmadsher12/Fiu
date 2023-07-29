@@ -22,7 +22,12 @@ from django.conf.urls import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('about/',about,name='about'),
+    path('contact/',contact,name='contact'),
+    path('design/',design,name='design'),
+    path('',index,name='index'),
+    path('shop/',shop,name='shop'),
 ]
 
 if settings.DEBUG:
-    urlpatterns += static.static(settings.MEDIA_URL,document_root = settings.MEDIAFILES_DIRS) + static.static(settings.Profile_URL,document_root = settings.PROFILEFILES_DIRS)
+    urlpatterns += static.static(settings.MEDIA_URL,document_root = settings.MEDIAFILES_DIRS)
