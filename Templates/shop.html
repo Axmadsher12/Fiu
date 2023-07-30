@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Shop</title>
+      <title>Fiu - Shop</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -48,20 +48,27 @@
                         <a class="nav-link" href="{% url 'about' %}">About</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{% url 'design' %}">Our Design</a>
+                        <a class="nav-link" href="{% url 'design' %}">Design</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="{% url 'shop' %}">Shop</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
                      </li>
                   </ul>
+                  <div class="search_icon">
+                     <ul class="navbar-nav mr-auto">
+                        <li>
+                           <a class="nav-link" href="{% url 'sign_in' %}">Logout</a>
+                        </li>
+                     </ul>
+                  </div>
                   <form class="form-inline my-2 my-lg-0">
                      <div class="search_icon">
                         <ul>
                            <li><a href="#"><img src="{% static 'images/search-icon.png' %}"></a></li>
-                           <li><a href="#"><img src="{% static 'images/user-icon.png' %}"></a></li>
+                           <li><a href="{% url 'sign_up' %}"><img src="{% static 'images/user-icon.png' %}"></a></li>
                         </ul>
                      </div>
                   </form>
