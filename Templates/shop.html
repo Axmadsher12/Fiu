@@ -60,7 +60,7 @@
                   <div class="search_icon">
                      <ul class="navbar-nav mr-auto">
                         <li>
-                           <a class="nav-link" href="{% url 'sign_in' %}">Logout</a>
+                           <a class="nav-link" href="{% url 'logout' %}">Logout user {{request.user}}</a>
                         </li>
                      </ul>
                   </div>
@@ -73,25 +73,60 @@
                      </div>
                   </form>
                </div>
+            </div>
          </nav>
-         </div>
       </div>
       <!-- header section end -->
       <!--  newsletter section start -->
       <div class="newsletter_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <div class="imgage_6"><img src="{% static 'images/img-6.png' %}"></div>
-               </div>
-               <div class="col-md-6">
-                  <h1 class="newsletter_taital">Subscribe Newsletter</h1>
-                  <input type="text" class="email_text" placeholder="Enter Your Email" name="Enter Your Email">
-                  <div class="subscribe_bt"><a href="#">Subscribe Now</a></div>
+         <form name="" action="{% url 'shop' %}" method="post">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="imgage_6"><img src="{% static 'images/img-6.png' %}"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <h1 class="newsletter_taital">Subscribe Newsletter</h1>
+                     {% for message in formmessages %}
+                     <p class="copyright_text">{{ message }}</p>
+                     {% endfor %}
+                     {% csrf_token %}
+                     {{ form.Your_email }}
+                     <div class="subscribe_bt"><a href="#">Subscribe Now</a></div>
+                     <button type="submit" class="btn btn-info btn-block">Subscribe Now</button>
+                  </div>
                </div>
             </div>
-         </div>
+         </form>
       </div>
+
+      <div class="newsletter_section layout_padding">
+         <form name="Mail Message" action="{% url 'shop' %}" method="post">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-6">
+                     <div class="imgage_6"><img src="{% static 'images/img-6.png' %}"></div>
+                  </div>
+                  <div class="col-md-6">
+                     <h1 class="newsletter_taital">Mail Message</h1>
+                     {% for message in form2message %}
+                     <p class="copyright_text">{{ message }}</p>
+                     {% endfor %}
+                     {% csrf_token %}
+                     {{ form2.Title }}
+                     {{ form2.Message }}
+                     <div class="subscribe_bt"><a href="#">Send</a></div>
+                     <button type="submit" class="btn btn-info btn-block">Send</button>
+                  </div>
+               </div>
+            </div>
+         </form>
+      </div>
+
+<!--<div class="alert alert-success">-->
+<!--   {{ message }}-->
+<!--</div>-->
+
       <!--  newsletter section end -->
       <!-- footer section start -->
       <div class="footer_section">

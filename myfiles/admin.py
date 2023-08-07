@@ -14,6 +14,10 @@ class admin_Subscribe_Newsletter(ModelAdmin):
     list_display = ['id','Your_email','Time']
 site.register(Subscribe_Newsletter,admin_Subscribe_Newsletter)
 
+class admin_Mail_Message(ModelAdmin):
+    list_display = ['id','Title','Message','Time']
+site.register(Mail_Message,admin_Mail_Message)
+
 class admin_Contact_Us(ModelAdmin):
     list_display = ['id','Name','Email','Phone_Number','Message','Time']
 site.register(Contact_Us,admin_Contact_Us)

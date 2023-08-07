@@ -14,6 +14,15 @@ class Our_Work_Furniture(Model):
 class Subscribe_Newsletter(Model):
     Your_email = EmailField(null=True,blank=True)
     Time = DateTimeField(null=True,blank=True,auto_now_add=True)
+    def __str__(self):
+        return self.Your_email
+
+class Mail_Message(Model):
+    Title = CharField(max_length=50,null=True,blank=True)
+    Message = TextField(null=True,blank=True)
+    Time = DateTimeField(null=True,blank=True,auto_now_add=True)
+    def __str__(self):
+        return self.Title
 
 class Contact_Us(Model):
     Name = CharField(max_length=25,null=True,blank=True)
@@ -29,4 +38,4 @@ class Our_Adress_Call_Email(Model):
     Time = DateTimeField(null=True,blank=True,auto_now_add=True)
 
 
-# null=True,blank=True
+# ,null=True,blank=True
